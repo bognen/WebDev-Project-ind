@@ -1,3 +1,8 @@
+/*--*********************************************/
+/*--Navigation bar -----------------------------*/
+/************************************************/
+
+/*** Styles for block of Descriptions ***/
 .decription{
   border: 2px solid blue;
   background-color: lightblue;
@@ -12,10 +17,12 @@
   color: black;
 }
 
+/*** Styles for Wrap (main Div) on Destanation Page ***/
 .flexdiv{
   display: flex;
 }
 
+/*** Styles for the Plane image (the one flights back and forth) ***/
 #flyingPlane {
   position: absolute;
   width: 50px;

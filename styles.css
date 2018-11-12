@@ -1,4 +1,6 @@
-
+/*************************************/
+/*** General Styles ***/
+/*************************************/
  body {
 	background-image: url("images/background.jpg");
 	background-repeat: repeat-x;
@@ -25,14 +27,18 @@
 	flex:90%;
 	}
 
+  /*************************************/
+  /*** Block List of Employees on Contact Us Page ***/
+  /*************************************/
   li.location {
 	list-style-image:url("images/location.jpg");
   }
     li.tel {
 	list-style-image:url("images/phone.png");
   }
-
-  /* Block to customize navigation bar */
+  /*************************************/
+  /*** Block to customize navigation bar ***/
+  /*************************************/
   nav {
 	background-color: #0c4db5;
 	font-weight: bold;
@@ -51,7 +57,9 @@
 	color: black;
 	background-color: white;
   }
-  /* End of navigation customize block*/
+  /*************************************/
+  /*** Styles for footer ***/
+  /*************************************/
 
   footer {
 	position:relative;
@@ -60,12 +68,12 @@
   margin-top: 5%;
 	font-size:8px:
   }
-
+  /*************************************/
   /* Block for image opacity */
+  /*************************************/
   .indeximage{
 	opacity: 0.75;
   }
-
    .indeximage:hover{
 	opacity: 1;
   }

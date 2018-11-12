@@ -1,24 +1,30 @@
-
-
-
+//***************************************************************************//
+//** Function which shows registration form hint in certain spot**//
+//***************************************************************************//
 function displayDesc(id){
-  //Retreive position of active element
+
+  //First: Retreive position of active input field
   var thisInput = document.getElementById(id);
   var pos = thisInput.getBoundingClientRect();
   var posY = pos.top;
 
-
+  //Second: we display hint in certain position
   var activePar = retreivePar(id);
   document.getElementById(activePar).style.marginTop = `${posY}px`;
   document.getElementById(activePar).style.display = "block";
 }
 
+//***************************************************************************//
+//** Function which hides Registration Form hint on blur**//
+//***************************************************************************//
 function hideDesc(id) {
   var activePar = retreivePar(id);
   document.getElementById(activePar).style.display = "none";
 }
 
-// Get id of paragraph
+//***************************************************************************//
+//** Function which helps to retreive ID a paragraph**//
+//***************************************************************************//
 function retreivePar(id) {
   var activePar;
   switch (id) {

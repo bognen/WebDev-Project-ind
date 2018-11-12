@@ -1,12 +1,16 @@
+//***************************************************************************//
+//** Variables which will be used in functions below**//
+//***************************************************************************//
 var errorMessage = document.getElementById('errorMessageText');
 var errorMessageBlock = document.getElementById('errorMessageBody');
 
+//***************************************************************************//
 // The main validation function checks:
 //   1. If all required fields filled
 //   2. If Entered Postal Code is valid
 //   3. If items 1,2 are true we trigger popup window where user can choose whether
 //      proceed or not
-
+//***************************************************************************//
 function validation(btnname, myForm) {
    var validFields = formValidation();
    var validPO = validatePO(myForm);
@@ -18,8 +22,9 @@ function validation(btnname, myForm) {
      displayPopUp(btnname);
     }
  }
-
-// Function to validate if all requred fields filled
+ //***************************************************************************//
+ //** Function to validate if all requred fields filled**//
+ //***************************************************************************//
 function formValidation() {
 
   var fname = document.forms["regform"]["fname"].value;
@@ -45,10 +50,11 @@ function formValidation() {
       return true;
   }
 }
-
-// Function to validate Postal Code
+//***************************************************************************//
+//** Function to validate Postal Code  **//
+//***************************************************************************//
 function validatePO(myForm) {
-  //await formValidation();
+
   var reg = /^[A-Z]\d[A-Z]\d[A-Z]\d$/;
   if (!reg.test(myForm.postal.value)) {
     document.forms["regform"]["postal"].style.borderColor = "#ff1a1a";
@@ -60,7 +66,9 @@ function validatePO(myForm) {
    }
   }
 
-// Function to close Erroe Message
+//***************************************************************************//
+//** Function to close Erroe Message **//
+//***************************************************************************//
 function closeErrorMessage() {
     errorMessageBody.style.display = "none";
 }
