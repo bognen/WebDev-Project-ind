@@ -87,3 +87,39 @@ function printContent(){
  function closeWindow(newWindow){
    newWindow.close();
  }
+ //***************************************************************************//
+ //** Funtcion which moves plane**//
+ //***************************************************************************//
+ var pos = 0;
+ var goRight = true;
+ var planeImg = document.getElementById("flyingPlane");
+
+ function planeIntervals(){
+   setInterval(movePlane,50);
+ }
+
+ function movePlane(){
+
+   if (goRight){
+     pos += 5;
+     if (pos > window.innerWidth)  {
+       goRight = false;
+       planeImg.src = "images/plane-left.png"
+     }
+   } else{
+     pos -= 5;
+     if (pos < 0){
+       goRight = true;
+       planeImg.src = "images/plane-right.png"
+     }
+   }
+   planeImg.style.left = pos + "px";
+   //console.log(pos);
+ }
+ //***************************************************************************//
+ //** Funtcion called onload**//
+ //***************************************************************************//
+function destOnLoad(){
+  printContent();
+  planeIntervals();
+}

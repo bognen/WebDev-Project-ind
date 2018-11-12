@@ -15,3 +15,10 @@
 .flexdiv{
   display: flex;
 }
+
+#flyingPlane {
+  position: absolute;
+  width: 50px;
+  left: 0px;
+  top: 18%;
+}
