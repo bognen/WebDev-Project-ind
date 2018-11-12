@@ -45,7 +45,7 @@ function printContent(){
       descDiv.setAttribute("onmouseover",`showImage(${i})`);
       descDiv.setAttribute("onmouseout",`hideImage(${i})`);
       descDiv.setAttribute("onclick",`openNewWind("${urlArray[i]}")`);
-      descDiv.setAttribute("title","Click to Find Outmore");
+      descDiv.setAttribute("title","Click to Find Out More");
 
       // Create an image elementand add to wrap div
       var imgDiv = document.createElement("DIV");
@@ -88,7 +88,7 @@ function printContent(){
    newWindow.close();
  }
  //***************************************************************************//
- //** Funtcion which moves plane**//
+ //** Funtcion which moves the plane image**//
  //***************************************************************************//
  var pos = 0;
  var goRight = true;
