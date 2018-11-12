@@ -7,8 +7,18 @@
   width: 30%;
   border-radius: 25px;
   height: 30px;
+  text-decoration: none;
+  font-size: 1.3em;
+  color: black;
 }
 
 .flexdiv{
   display: flex;
+}
+
+#flyingPlane {
+  position: absolute;
+  width: 50px;
+  left: 0px;
+  top: 18%;
 }
