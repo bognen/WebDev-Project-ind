@@ -7,25 +7,22 @@ var errorMessageBlock = document.getElementById('errorMessageBody');
 //***************************************************************************//
 // The main validation function checks:
 //   1. If all required fields filled
-//   2. If Entered Postal Code is valid
-//   3. If items 1,2 are true we trigger popup window where user can choose whether
-//      proceed or not
+//   2. Inside form validation function postal code validation triggers as a callback
+//   3. If function in paragraph returns true value, users pop up dialog lunches
 //***************************************************************************//
 function validation(btnname, myForm) {
-   var validFields = formValidation();
-   var validPO = validatePO(myForm);
+   var validFields = formValidation(myForm,validatePO);
 
-   console.log(validFields);
-   console.log(validPO);
-
-   if (validFields==true && validPO==true){
+   if (validFields==true){
      displayPopUp(btnname);
     }
  }
  //***************************************************************************//
- //** Function to validate if all requred fields filled**//
+ //** Function validates if all requred fields filled and then lunches PO validation**//
  //***************************************************************************//
-function formValidation() {
+function formValidation(myForm,callback) {
+
+  var formValid = false;
 
   var fname = document.forms["regform"]["fname"].value;
   var lname = document.forms["regform"]["lname"].value;
@@ -35,20 +32,31 @@ function formValidation() {
       document.forms["regform"]["fname"].style.borderColor = "#ff1a1a";
       errorMessage.innerHTML = "Required field \"First Name\" is not filled";
       errorMessageBody.style.display = "block";
-      return false;
+      formValid = false;
+      return formValid;
   } else if (lname==null || lname=="") {
       document.forms["regform"]["lname"].style.borderColor = "#ff1a1a";
       errorMessage.innerHTML = "Required field \"Last Name\" is not filled";
       errorMessageBody.style.display = "block";
-      return false;
+      formValid = false;
+      return formValid;
   } else if (email==null || email=="") {
       document.forms["regform"]["email"].style.borderColor = "#ff1a1a";
       errorMessage.innerHTML = "Required field \"Email\" is not filled";
       errorMessageBody.style.display = "block";
-      return false;
+      formValid = false;
+      return formValid;
   } else{
-      return true;
+      formValid = true;
   }
+
+  if(formValid == true){
+    var validPO = callback(myForm);
+    return validPO;
+  }
+
+  console.log("form Valid - "+ formValid);
+  console.log("PO valid - "+validPO );
 }
 //***************************************************************************//
 //** Function to validate Postal Code  **//
