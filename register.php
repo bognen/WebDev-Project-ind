@@ -17,7 +17,7 @@
 	</head>
 <body>
   <header class="row">
-		<a href="index.html">
+		<a href="index.php">
 		  <img id="logo" src="images/travel-agency.png">
 		</a>
 	   	<h1 style="font-family:'Dancing Script', cursive, bold;font-size: 350%;

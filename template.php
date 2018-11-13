@@ -7,10 +7,10 @@
 </head>
 <body>
 	<header class="row">
-		<a href="index.html"><img id="logo" src="images/travel-agency.png"></a>
+		<a href="index.php"><img id="logo" src="images/travel-agency.png"></a>
 	   	<h1>Travel Experts</h1>
 	</header>
-	
+
  <footer style="font-size:12px">Copyright &copy; 2018 by Travel Experts</footer>
 </body>
 </html>

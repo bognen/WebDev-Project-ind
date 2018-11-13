@@ -8,7 +8,7 @@
 </head>
 <body onload="destOnLoad()">
 	<header class="row">
-		<a href="index.html"><img id="logo" src="images/travel-agency.png"></a>
+		<a href="index.php"><img id="logo" src="images/travel-agency.png"></a>
 	   	<h1 style="color:black;">Our the Most Popular Travel Destanations</h1>
 	</header>
 	<!--****************************************************************-->

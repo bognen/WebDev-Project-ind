@@ -7,7 +7,7 @@
 </head>
 <body>
 	<header class="row">
-    	<a href="index.html">
+    	<a href="index.php">
 		  <img id="logo" src="images/travel-agency.png">
 		</a>
 		<h1>Welcome to Travel Experts</h1>
@@ -18,9 +18,9 @@
 	  <nav>
 		<a class="navbar" href="">VACATIONS</a>
 		<a class="navbar" href="">FLIGHTS</a>
-		<a class="navbar" href="">CRUISES</a>
-		<a class="navbar" href="destanations.html">DESTANATIONS</a>
-		<a class="navbar" href="template.html">WEDDINGS</a>
+		<a class="navbar" href="links.php">CRUISES</a>
+		<a class="navbar" href="destanations.php">DESTANATIONS</a>
+		<a class="navbar" href="template.php">WEDDINGS</a>
 	  </nav>
 	<br />
 	<!--****************************************************************-->
@@ -41,10 +41,10 @@
 	<!--Contact Us and Register buttons ---------------------------------->
 	<!--****************************************************************-->
 	<div class="buttons">
-		<a href="contact.html"><img src="images/contact.jpg"/></a>
-		<a href="register.html"><img src="images/register.jpg"/></a>
+		<a href="contact.php"><img src="images/contact.jpg"/></a>
+		<a href="register.php"><img src="images/register.jpg"/></a>
 	</div>
-	
+
   <footer style="font-size:12px">Copyright &copy; 2018 by Travel Experts</footer>
 </body>
 </html>
