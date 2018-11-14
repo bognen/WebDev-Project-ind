@@ -46,16 +46,18 @@
 	height: 27px;
   }
 
-  .navbar {
-	color: white;
+  .navbar-brand {
+  padding: 5px 5px !important;
+	color: white !important;
+  height: inherit !important;
 	vertical-align: middle;
 	text-decoration: none;
-	margin-left: 65px;
+	margin-left: 5%;
   }
 
-  .navbar:hover {
-	color: black;
-	background-color: white;
+  .navbar-brand:hover {
+	color: black !important;
+	background-color: white !important;
   }
   /*************************************/
   /*** Styles for footer ***/
@@ -77,5 +79,19 @@
    .indeximage:hover{
 	opacity: 1;
   }
-
   /* End of block for image opacity */
+  /*************************************/
+  /** Styles for Banner on Index Page***/
+  /*************************************/
+  .banner{
+    position: relative;
+    text-align: center;
+    font-size: 2.25em;
+  }
+  .greeting{
+    position: absolute;
+    top: 50%
+    left: 50%;
+    right: 50%;
+    transform: translate(-50,-50);
+  }

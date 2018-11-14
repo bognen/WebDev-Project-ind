@@ -17,12 +17,12 @@
 .wholegroup{
 	 display: inline-block;
 	 border-radius: 25px;
-	 background-color: #2193b2;
-	 padding: 25px;
-	 width: 60%;
-	 position:absolute;
-     top: 20%;
-     left: 15%;
+	 background-color: #3A87B1;
+	 margin-top: 15px;
+	 width: 55%;
+	 position:relative;
+	 left: 10%;
+		top: 30%;
 	 box-shadow: 8px 8px 5px #92b6ef;
 }
 
@@ -33,7 +33,7 @@ span.input-group-addon {
 }
 
 .form-control{
-	font-size:17px;
+	font-size:14px;
 }
 
 .form-group{

@@ -2,13 +2,15 @@
 <html lang="en">
   <head>
 		<!--The line below links font awesome-->
-		<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="styles.css" />
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="regformStyles.css" />
+    <!-- Latest compiled and minified CSS -->
 
 		<!--The link below makes icons look full-->
 		<link href="bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <link rel="stylesheet" type="text/css" href="regformStyles.css" />
     <!--Link main.js-->
     <script type="text/javascript" src="js/onfocus.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
@@ -16,14 +18,14 @@
 		<title>Registration Form</title>
 	</head>
 <body>
-  <header class="row">
-		<a href="index.php">
-		  <img id="logo" src="images/travel-agency.png">
-		</a>
-	   	<h1 style="font-family:'Dancing Script', cursive, bold;font-size: 350%;
-	color: white; padding-left: 80px;flex:90%">Travel Experts</h1>
-	</header>
-	<br />
+
+    <!--****************************************************************-->
+    <!--Include two php files in order to upload header and menu bar  ---->
+    <!--****************************************************************-->
+    <?php
+      include_once "header.php";
+      include_once "menu.php";
+    ?>
 	  <!--************************************************************************************-->
     <!--Part responsibe for PopUp Window. Initially hidden ----------------------------------->
     <!--************************************************************************************-->
@@ -127,7 +129,7 @@
   			<div class="form-group col-md-6">
   				<label>Email</label>
   				<div class="input-group">
-  					<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+  					<span class="input-group-addon"><i class="fa fa-at fa" aria-hidden="true"></i></span>
   					<input type="text" class="form-control" name="email" id="email" onfocus="displayDesc(this.id)"
                    onblur="hideDesc(this.id)" placeholder="Enter your Email"/>
   				</div>
@@ -135,7 +137,7 @@
   			<div class="form-group col-md-6">
   				<label>Phone Number</label>
   				<div class="input-group">
-  					<span class="input-group-addon"><i class="fa fa-at fa" aria-hidden="true"></i></span>
+  					<span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
   					<input type="text" class="form-control" name="phone" id="phone" onfocus="displayDesc(this.id)"
                    onblur="hideDesc(this.id)" placeholder="Enter your Phone Number"/>
   				</div>
@@ -209,6 +211,12 @@
         </div>
   		</form>
 	  </div>
+    <!--****************************************************************-->
+    <!--PHP function which downloads footer ------------------------------>
+    <!--****************************************************************-->
+    <?php
+      include_once "footer.php";
+    ?>
     <!--************************************************************************************-->
     <!--  JavaScript---------------------------------------------------------------->
     <!--************************************************************************************-->
