@@ -38,6 +38,28 @@
 		</div>
 	</div>
 	<!--****************************************************************-->
+	<!--Embedded PHP banner ---------------------------------------------->
+	<!--****************************************************************-->
+	<?php
+		$currentHour = date("H");
+		if ($currentHour>=0 && $currentHour<12){
+			echo "<div class=\"banner\">
+				<h2 class=\"greeting\">Good Morning</h2>
+				<img src=\"images/morning.jpg\" style=\"width:100%\"/>
+			</div>";
+		} elseif ($currentHour>=12 && $currentHour<18) {
+			echo "<div class=\"banner\">
+				<h2 class=\"greeting\">Good Afternoon</h2>
+				<img src=\"images/afternon.jpg\" style=\"width:100%\"/>
+			</div>";
+		} else {
+			echo "<div class=\"banner\">
+				<h2 class=\"greeting\">Good Evening</h2>
+				<img src=\"images/evening.jpg\" style=\"width:100%\"/>
+			</div>";
+		}
+	?>
+	<!--****************************************************************-->
 	<!--Contact Us and Register buttons ---------------------------------->
 	<!--****************************************************************-->
 	<div class="buttons">
