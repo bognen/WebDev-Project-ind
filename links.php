@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Contact Us - Travel Experts</title>
+	<title>Travel Sites</title>
 	<link rel="stylesheet" href="styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
   <style>
@@ -21,10 +21,15 @@
 	   	<h1>Travel Links</h1>
 	</header>
     <?php
+			include_once "variables.php";
+
       print("<table>");
-        for ($i=1;$i<=6;$i++){
-          print("<tr><td class=\"linkTable\">$i</td><td class=\"linkTable\"><a href=\"dummy/page$i.php\"> Page$i.php</a></td></tr><br />");
-        }
+				$i=1;
+				foreach ($travelSites as $site => $siteLink){
+					print("<tr><td class=\"linkTable\">$i</td><td class=\"linkTable\">
+								 <a href=\"$siteLink\" target=\"_blank\">$site</a></td></tr><br />");
+					$i++;
+				}
       print("</table>");
     ?>
  <footer style="font-size:12px">Copyright &copy; 2018 by Travel Experts</footer>

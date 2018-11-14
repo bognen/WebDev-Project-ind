@@ -46,16 +46,18 @@
 	height: 27px;
   }
 
-  .navbar {
-	color: white;
+  .navbar-brand {
+  padding: 5px 5px !important;
+	color: white !important;
+  height: inherit !important;
 	vertical-align: middle;
 	text-decoration: none;
-	margin-left: 65px;
+	margin-left: 5%;
   }
 
-  .navbar:hover {
-	color: black;
-	background-color: white;
+  .navbar-brand:hover {
+	color: black !important;
+	background-color: white !important;
   }
   /*************************************/
   /*** Styles for footer ***/
@@ -84,7 +86,6 @@
   .banner{
     position: relative;
     text-align: center;
-    color: darkgrey;
     font-size: 2.25em;
   }
   .greeting{
