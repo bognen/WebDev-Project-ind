@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Travel Sites</title>
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="styles/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
   <style>
     table {

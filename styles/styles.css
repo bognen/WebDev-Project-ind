@@ -2,7 +2,7 @@
 /*** General Styles ***/
 /*************************************/
  body {
-	background-image: url("images/background.jpg");
+	background-image: url("../images/background.jpg");
 	background-repeat: repeat-x;
 	}
 
@@ -31,10 +31,10 @@
   /*** Block List of Employees on Contact Us Page ***/
   /*************************************/
   li.location {
-	list-style-image:url("images/location.jpg");
+	list-style-image:url("../images/location.jpg");
   }
     li.tel {
-	list-style-image:url("images/phone.png");
+	list-style-image:url("../images/phone.png");
   }
   /*************************************/
   /*** Block to customize navigation bar ***/
