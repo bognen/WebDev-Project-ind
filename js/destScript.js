@@ -25,7 +25,7 @@ images[3] = new Image();
 images[3].src = 'images/banff.jpg';
 
 var image; //Variable for showImage() function
-var newWindow
+var newWindow;
 //***************************************************************************//
 //** Function below creates list of descriptions along with images ang URLs**//
 //***************************************************************************//

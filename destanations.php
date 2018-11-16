@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Popular Destanations</title>
-	<link rel="stylesheet" href="destStyles.css">
-  <link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="styles/destStyles.css">
+  <link rel="stylesheet" href="styles/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 </head>
 <body onload="destOnLoad()">

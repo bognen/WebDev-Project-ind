@@ -54,9 +54,6 @@ function formValidation(myForm,callback) {
     var validPO = callback(myForm);
     return validPO;
   }
-
-  console.log("form Valid - "+ formValid);
-  console.log("PO valid - "+validPO );
 }
 //***************************************************************************//
 //** Function to validate Postal Code  **//

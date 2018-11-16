@@ -12,7 +12,7 @@ function insArray($tableName, $myArray){
       {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
     } else {
-      echo "DB connection was successful</br>";
+      //echo "DB connection was successful</br>";
     }
     //Declare variable for the loop
     $rawValue_list="";
@@ -21,13 +21,15 @@ function insArray($tableName, $myArray){
       $transData = "'".$value."'";
       $rawValue_list = $rawValue_list.",".$transData;
     }
+
     $field_list=implode(",",array_keys($myArray)); // Put all keys together in one string
     $value_list=substr($rawValue_list,1); //Subtracting the first element from generated string as getting extra ","
     $sqlInsAgert="INSERT INTO $tableName ($field_list) VALUES ($value_list)";
 
     //if ($conn->query($sqlInsAgert) === TRUE){
     if (mysqli_query($conn,$sqlInsAgert) === TRUE){
-         echo "New record created successfully";
+         //echo "New record created successfully";
+         return TRUE;
        } else {
         echo "Error: " . $sqlInsAgert . "<br>" . $conn->error;}
 
