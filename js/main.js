@@ -61,3 +61,38 @@
   function confirmFunc(){
     document.getElementById("regForm").submit();
   }
+
+  //*********************************************************//
+  //** Onmouse over function form index page **//
+  //*********************************************************//
+  var types = ["Tropical Vacation","Mountain Adventure","Ocean Cruises"];
+  var typeImage = new Array;
+  typeImage[0] = new Image();
+  typeImage[0].src = "images/zanzibar.jpg"
+
+  typeImage[1] = new Image();
+  typeImage[1].src = 'images/swiss_alps.jpg';
+
+  typeImage[2] = new Image();
+  typeImage[2].src = 'images/cruise.jpg';
+
+  var typeUrl = ["https://www.islands.com/20-best-caribbean-beach-resorts",
+                 "https://crmr.com/",
+                 "https://www.royalcaribbean.com/"];
+
+  function setTypes(){
+    for (i=0; i<types.length; i++) {
+      var typeDiv = document.createElement("DIV");
+      typeDiv.setAttribute("class","vacationTypesDesc");
+      var textnode = document.createTextNode(types[i]);
+      typeDiv.appendChild(textnode);
+      typeDiv.setAttribute("onmouseover",`changeType(${i})`);
+      document.getElementById("vacTypesDiv").appendChild(typeDiv);
+    }
+  }
+
+  function changeType(index){
+    var img = document.getElementById("vacTypeImg");
+    img.setAttribute("onclick",`window.open("${typeUrl[index]}")`);
+    img.src = typeImage[index].src;
+  }
