@@ -65,6 +65,17 @@
           <input type="text" class="form-control" class="form-group col-md-8"
           name="AgtPosition" id="AgtPosition" placeholder="Enter your Agent's Title"/>
         </div>
+        <div class="row">
+          <label class="agentLabel" class="form-group col-md-4">Agency</label>
+          <select class="form-control" class="form-group col-md-8"
+          name="AgencyId" id="AgencyId" placeholder="Select Agency">
+            <option></option>
+            <?php
+              include_once "functions.php";
+              selectAgencies();
+            ?>
+          </select>
+        </div>
         <input class="btn btn-primary btn-lg pull-right" type="submit"
         name="agentSubmit" id="agentSubmit" value="Register"  onclick="return addAgentValidation(this.form)"/>
     </form>

@@ -1,6 +1,6 @@
 <?php
 
-function insArray($tableName, $myArray){
+function insArray($myArray){
     $server="localhost";
     $user="root";
     $password="";
@@ -14,34 +14,50 @@ function insArray($tableName, $myArray){
     } else {
       //echo "DB connection was successful</br>";
     }
-    //Declare variable for the loop
-    $rawValue_list="";
-    //Loop through received array in order create one string sutable for MySQL query
-    foreach ($myArray as $field => $value) {
-      $transData = "'".$value."'";
-      $rawValue_list = $rawValue_list.",".$transData;
+    $sql = "INSERT INTO `agents`(`AgtFirstName`,`AgtMiddleInitial`,`AgtLastName`,`AgtBusPhone`,
+                        `AgtEmail`,`AgtPosition`,`AgencyId`) VALUES (?,?,?,?,?,?,?)";
+
+    $stmt = mysqli_prepare($conn,$sql);
+    mysqli_stmt_bind_param($stmt,"ssssssi",$myArray["AgtFirstName"],$myArray["AgtMiddleInitial"],
+                           $myArray["AgtLastName"],$myArray["AgtBusPhone"],$myArray["AgtEmail"],
+                           $myArray["AgtPosition"],$myArray["AgencyId"]);
+    $result=mysqli_execute($stmt);
+
+    if(!$result){
+      $error_mes = mysqli_stmt_error($stmt);
+      $myfile = file_put_contents('logs.txt', $error_mes , FILE_APPEND | LOCK_EX);
+      return false;
+    } else{
+      return true;
     }
 
-    $field_list=implode(",",array_keys($myArray)); // Put all keys together in one string
-    $value_list=substr($rawValue_list,1); //Subtracting the first element from generated string as getting extra ","
-    $sqlInsAgert="INSERT INTO $tableName ($field_list) VALUES ($value_list)";
 
-    //if ($conn->query($sqlInsAgert) === TRUE){
-    if (mysqli_query($conn,$sqlInsAgert) === TRUE){
-         //echo "New record created successfully";
-         return TRUE;
-       } else {
-        echo "Error: " . $sqlInsAgert . "<br>" . $conn->error;}
-
-    mysqli_close($conn);
+   mysqli_close($conn);
  }
 
-// $sqlInsAgert = "INSERT INTO agents (AgtFirstName,AgtMiddleInitial,AgtLastName,AgtBusPhone,AgtEmail,AgtPosition)
-//                 VALUES ('{$taInfo['AgtFirstName']}',
-//                         '{$taInfo['AgtMiddleInitial']}',
-//                         '{$taInfo['AgtLastName']}',
-//                         '{$taInfo['AgtBusPhone']}',
-//                         '{$taInfo['AgtEmail']}',
-//                         '{$taInfo['AgtPosition']}')";
+function selectAgencies(){
+  $server="localhost";
+  $user="root";
+  $password="";
+  $dbname="travelexperts";
 
+  $conn = mysqli_connect($server,$user,$password,$dbname);
+  // Check connection
+  if (mysqli_connect_errno())
+    {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  } else {
+    //echo "DB connection was successful</br>";
+  }
+
+  $sql="SELECT `AgencyId`,`AgncyAddress`,`AgncyCity` FROM `agencies`";
+  $result = mysqli_query($conn,$sql);
+
+  while($row=mysqli_fetch_assoc($result)){
+    //echo($row["AgncyAddress"]);
+    echo("<option value=\"$row[AgencyId]\">$row[AgncyCity]($row[AgncyAddress])</option>");
+  }
+
+  mysqli_close($conn);
+}
 ?>
