@@ -31,7 +31,7 @@
 
   //Inserting data into the database
   include_once('functions.php');
-  if (insArray('agents', $data_array)===TRUE){
+  if (insArray($data_array)===TRUE){
     $myfile = file_put_contents('logs.txt', $data_array , FILE_APPEND | LOCK_EX);
     include_once("snipents/agentRegCopy.php");
     echo "<div id=\"myModal\" class=\"modal\">
