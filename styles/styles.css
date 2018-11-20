@@ -22,10 +22,15 @@
  }
 
  .container, .indeximage, .buttons {
-      flex: 33.33%;
+    flex: 33.33%;
 	  padding: 5px;
     }
-
+  .loginBar{
+    color:darkblue;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 2%;
+  }
   /*************************************/
   /*** Block List of Employees on Contact Us Page ***/
   /*************************************/

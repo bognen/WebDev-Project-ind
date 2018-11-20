@@ -15,12 +15,24 @@ function insArray($myArray){
       //echo "DB connection was successful</br>";
     }
     $sql = "INSERT INTO `agents`(`AgtFirstName`,`AgtMiddleInitial`,`AgtLastName`,`AgtBusPhone`,
-                        `AgtEmail`,`AgtPosition`,`AgencyId`) VALUES (?,?,?,?,?,?,?)";
+                        `AgtEmail`,`AgtPosition`,`AgencyId`,`AgtPsw`) VALUES (?,?,?,?,?,?,?,?)";
+
+    //Sanitazing data (except password as itis encrypted) before input it into DataBase
+    $AgtFirstName=mysqli_real_escape_string($conn,$myArray["AgtFirstName"]);
+    $AgtMiddleInitial=mysqli_real_escape_string($conn,$myArray["AgtMiddleInitial"]);
+    $AgtLastName=mysqli_real_escape_string($conn,$myArray["AgtLastName"]);
+    $AgtBusPhone=mysqli_real_escape_string($conn,$myArray["AgtBusPhone"]);
+    $AgtEmail=mysqli_real_escape_string($conn,$myArray["AgtEmail"]);
+    $AgtPosition=mysqli_real_escape_string($conn,$myArray["AgtPosition"]);
+    $AgencyId=mysqli_real_escape_string($conn,$myArray["AgencyId"]);
+
+    //Hash the value of a Password
+    $hasedPassword = password_hash($myArray["AgtPsw"], PASSWORD_BCRYPT);
 
     $stmt = mysqli_prepare($conn,$sql);
-    mysqli_stmt_bind_param($stmt,"ssssssi",$myArray["AgtFirstName"],$myArray["AgtMiddleInitial"],
-                           $myArray["AgtLastName"],$myArray["AgtBusPhone"],$myArray["AgtEmail"],
-                           $myArray["AgtPosition"],$myArray["AgencyId"]);
+    mysqli_stmt_bind_param($stmt,"ssssssis",$AgtFirstName,$AgtMiddleInitial,
+                           $AgtLastName,$AgtBusPhone,$AgtEmail, $AgtPosition,
+                           $AgencyId,$hasedPassword);
     $result=mysqli_execute($stmt);
 
     if(!$result){
