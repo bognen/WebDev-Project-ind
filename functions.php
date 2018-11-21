@@ -58,6 +58,7 @@ function selectAgencies(){
   if (mysqli_connect_errno())
     {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    $myfile = file_put_contents('logs.txt', mysqli_connect_error(), FILE_APPEND | LOCK_EX);
   } else {
     //echo "DB connection was successful</br>";
   }

@@ -57,7 +57,7 @@
   <!--************************************************************************************-->
   <div id="addAgent">
     <h4 id="addAgentHeader">Enter New Agent's Info</h4>
-    <form id="addAgentForm" name="addAgentForm" method="POST" action="test.php">
+    <form id="addAgentForm" name="addAgentForm" method="POST" action="insertAgent.php">
         <div class="row">
           <label  class="agentLabel" class="form-group col-md-4">First Name</label>
           <input type="text" class="form-control" class="form-group col-md-8"

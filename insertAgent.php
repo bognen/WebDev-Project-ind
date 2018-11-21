@@ -1,3 +1,9 @@
+<?php
+if (!isset($_REQUEST['AgtFirstName'])){
+  echo "There is nothing in this file";
+  header('Location: agentReg.php');
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,16 +17,14 @@
   <!--The link below makes icons look full-->
   <link href="bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link rel="stylesheet" type="text/css" href="styles/addagentStyles.css" />
-  <!--Link main.js-->
-  <script type="text/javascript" src="js/onfocus.js"></script>
-  <script type="text/javascript" src="js/addAgent.js"></script>
+
   <title>Register New Agent</title>
 </head>
 <body>
 <?php
   include_once("header.php");
   include_once("menu.php");
-  // Retreive data from form @agentReg.php
+  // Retreive data from form agentReg.php
   foreach ($_REQUEST as $name => $value) {
      $data_array[$name]=$value;
   }
@@ -52,7 +56,5 @@
         location.href ="agentReg.php";
     }
 </script>
-<script type="text/javascript" src="js/onfocus.js"></script>
-<script type="text/javascript" src="js/addAgent.js"></script>
 </body>
 </html>
