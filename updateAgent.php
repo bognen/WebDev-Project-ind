@@ -22,11 +22,22 @@
 <head>
 <body>
   <?php
+    // Establishing connectionto DB
     $server="localhost";
     $user="root";
     $password="";
     $dbname="travelexperts";
     $conn = mysqli_connect($server,$user,$password,$dbname);
+    // Chaeck if conncetion to DB was successful
+    if (mysqli_connect_errno())
+      {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+      $myfile = file_put_contents('logs.txt', mysqli_connect_error(), FILE_APPEND | LOCK_EX);
+    } else {
+      //echo "DB connection was successful</br>";
+    }
+
+    //Getting ID of an agent that we are going to update
     $id=$_REQUEST['agentUpdateText'];
 
     $sql = "SELECT agents.AgentId, agents.AgtFirstName, agents.AgtMiddleInitial,

@@ -14,6 +14,17 @@
   $password="";
   $dbname="travelexperts";
   $conn = mysqli_connect($server,$user,$password,$dbname);
+  // Chaeck if conncetion to DB was successful
+  if (mysqli_connect_errno())
+    {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    $myfile = file_put_contents('logs.txt', mysqli_connect_error(), FILE_APPEND | LOCK_EX);
+    $_SESSION["Message"]="Database connection is failed";
+    mysqli_close($conn);
+    header("location:login.php");
+  } else {
+    //echo "DB connection was successful</br>";
+  }
 
   //Store received data in separate variables
   $providedEmail = $_REQUEST["loginEmail"];
@@ -24,11 +35,6 @@
   $result = mysqli_query($conn,$sql);
   $password = mysqli_fetch_array($result);
 
-  if (!$conn){
-    $_SESSION["Message"]="Database connection is failed";
-    mysqli_close($conn);
-    header("location:login.php");
-  }
 
   //It requires define $_SESSION["returnpage"]
   $_SESSION["returnpage"]="agentReg.php";

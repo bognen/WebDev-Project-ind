@@ -9,6 +9,14 @@
   $password="";
   $dbname="travelexperts";
   $conn = mysqli_connect($server,$user,$password,$dbname);
+  // Chaeck if conncetion to DB was successful
+  if (mysqli_connect_errno())
+    {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    $myfile = file_put_contents('logs.txt', mysqli_connect_error(), FILE_APPEND | LOCK_EX);
+  } else {
+    //echo "DB connection was successful</br>";
+  }
 
   // Check if Password on Update page has been hashed (it is not hashed only in case
   // only when user updated password as well). If it is NOT we encrypt it
@@ -39,7 +47,7 @@
   if ($conn->query($sql) === TRUE) {
     mysqli_close($conn);
     // header('Location: agentReg.php');
-    echo "Record updated successfully";
+    echo "Record updated successfully. Add session info to this file and agentReg.php";
     echo "<script>setTimeout(\"location.href='agentReg.php';\",3500);</script>";
 } else {
     echo "Error updating record: " . $conn->error;
