@@ -1,3 +1,7 @@
+<?php
+  session_cache_expire(30);
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,12 +20,10 @@
   </style>
 </head>
 <body>
-	<header class="row">
-		<a href="index.php"><img id="logo" src="images/travel-agency.png"></a>
-	   	<h1>Travel Links</h1>
-	</header>
-    <?php
-			include_once "variables.php";
+  <?php
+		include_once "header.php";
+	  include_once "menu.php";
+		include_once "variables.php";
 
       print("<table>");
 				$i=1;

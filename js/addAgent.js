@@ -11,6 +11,7 @@ function addAgentValidation(myForm) {
   var phone = document.forms["addAgentForm"]["AgtBusPhone"].value;
   var email = document.forms["addAgentForm"]["AgtEmail"].value;
   var title = document.forms["addAgentForm"]["AgtPosition"].value;
+  var agency = document.forms["addAgentForm"]["AgencyId"].value;
 
 
   if (fname==null || fname==""){
@@ -38,6 +39,11 @@ function addAgentValidation(myForm) {
       errorMessage.innerHTML = "Required field \"Title\" is not filled";
       errorMessageBody.style.display = "block";
       return false;
+    } else if (agency==null || agency=="") {
+      document.forms["addAgentForm"]["AgencyId"].style.borderColor = "#ff1a1a";
+      errorMessage.innerHTML = "Required field \"Agency\" is not filled";
+      errorMessageBody.style.display = "block";
+      return false;
   } else{
       return true;
   }
@@ -45,4 +51,19 @@ function addAgentValidation(myForm) {
 // Function to close popup message
 function closeErrorMessage() {
     errorMessageBody.style.display = "none";
+}
+// *****************************************************************//
+/// *** Function for hidden Update agents info window ***///
+// *****************************************************************//
+var updateBtn = document.getElementById("updateBtn")
+var updateMessageBody = document.getElementById('agentUpdate');
+
+document.getElementById('updateBtn').addEventListener("click", showUpdateRequest);
+
+function showUpdateRequest(){
+  updateMessageBody.style.display = "block";
+}
+// Function to close popup message
+function closeUpadateMessage() {
+    updateMessageBody.style.display = "none";
 }

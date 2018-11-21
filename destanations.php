@@ -1,3 +1,7 @@
+<?php
+  session_cache_expire(30);
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,10 +11,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 </head>
 <body onload="destOnLoad()">
-	<header class="row">
-		<a href="index.php"><img id="logo" src="images/travel-agency.png"></a>
-	   	<h1 style="color:black;">Our the Most Popular Travel Destanations</h1>
-	</header>
+  <?php
+		include_once "header.php";
+	  include_once "menu.php";
+	?>
 	<!--****************************************************************-->
 	<!--All required data is generated onload via js/destScript.js ------->
 	<!--****************************************************************-->

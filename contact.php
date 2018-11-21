@@ -1,3 +1,7 @@
+<?php
+  session_cache_expire(30);
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,10 +10,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 </head>
 <body>
-	<header class="row">
-		<a href="index.html"><img id="logo" src="images/travel-agency.png"></a>
-	   	<h1>Travel Experts</h1>
-	</header>
+  <?php
+		include_once "header.php";
+	  include_once "menu.php";
+	?>
 	<!--***********************************************************************-->
 	<!--Visit Us block with company address and Phone --------------------------->
 	<!--***********************************************************************-->

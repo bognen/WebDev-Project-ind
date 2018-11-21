@@ -1,3 +1,13 @@
+<?php
+    session_cache_expire(30);
+    session_start();
+
+    if(!isset($_SESSION["logged-in"]) || !$_SESSION["logged-in"]){
+      $_SESSION[returnpage]="agentReg.php";
+      header("location:login.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +21,7 @@
   <link rel="stylesheet" type="text/css" href="styles/addagentStyles.css" />
   <!--Link main.js-->
   <script type="text/javascript" src="js/main.js"></script>
-  <script type="text/javascript" src="js/addAgent.js"></script>
+  <!--<script type="text/javascript" src="js/addAgent.js"></script> -->
   <title>Register New Agent</title>
 </head>
 
@@ -27,6 +37,19 @@
     <div id="addAgEMessageContent">
       <span class="close" id="closeError" onclick="closeErrorMessage()">&times;</span>
       <p id="addAgErrorMessageText"> </p>
+    </div>
+  </div>
+  <!--************************************************************************************-->
+  <!--Hidden Div for Agent Info Update ------------------------------------------>
+  <!--************************************************************************************-->
+  <div id="agentUpdate">
+    <div id="agentUpdateContent">
+      <span class="close" id="closeError" onclick="closeUpadateMessage()">&times;</span>
+      <form id="agentUpdateForm" method="POST" action="updateAgent.php">
+        <label>Enter Agents ID</label>
+        <input type="text" id="agentUpdateText" name="agentUpdateText" />
+        <input clas="btn btn-primary btn-lg pull-right" type="submit" value="Find">
+      </form>
     </div>
   </div>
   <!--************************************************************************************-->
@@ -76,8 +99,18 @@
             ?>
           </select>
         </div>
-        <input class="btn btn-primary btn-lg pull-right" type="submit"
-        name="agentSubmit" id="agentSubmit" value="Register"  onclick="return addAgentValidation(this.form)"/>
+        <div class="row">
+          <label class="agentLabel" class="form-group col-md-4">Password</label>
+          <input type="password" class="form-control" class="form-group col-md-8"
+          name="AgtPsw" id="AgtPsw" placeholder="Enter your Agent's Password"/>
+        </div>
+        <div class="col-md-12">
+          <input class="btn btn-primary btn-lg pull-right" type="submit"
+          name="agentSubmit" id="agentSubmit" value="Register"  onclick="return addAgentValidation(this.form)"/>
+        </div>
+        <div class="test">
+          <button type="button" class="btn btn-link btn-lg pull-right" id="updateBtn">Update Existing Agent</button>
+        </div>
     </form>
   </div>
   <?php
