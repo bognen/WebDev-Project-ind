@@ -1,0 +1,29 @@
+/* Registration form wrap  */
+.loginGroup{
+	 display: inline-block;
+	 border-radius: 25px;
+	 background-color: darkgrey;
+	 margin-top: 15px;
+	 width: 35%;
+	 position:relative;
+	 left: 10%;
+		top: 30%;
+	 box-shadow: 8px 8px 5px #92b6ef;
+   padding: 2vw;
+}
+
+label{
+display:inline-block;
+width:10vw;
+margin-right:30px;
+text-align:right;
+}
+
+.loginRow{
+  margin:1vw;
+}
+
+#loginHeader{
+  text-align: center;
+  margin-bottom: 2vw;
+}
