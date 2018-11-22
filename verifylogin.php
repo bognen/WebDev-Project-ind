@@ -35,7 +35,6 @@
   $result = mysqli_query($conn,$sql);
   $password = mysqli_fetch_array($result);
 
-
   //It requires define $_SESSION["returnpage"]
   $_SESSION["returnpage"]="agentReg.php";
 
