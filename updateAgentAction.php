@@ -47,12 +47,19 @@
   if ($conn->query($sql) === TRUE) {
     mysqli_close($conn);
     // header('Location: agentReg.php');
-    echo "Record updated successfully. Add session info to this file and agentReg.php";
-    echo "<script>setTimeout(\"location.href='agentReg.php';\",3500);</script>";
+    // The PopUp Box which is being shown for 2.5 sec
+    echo
+   "<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/upDateAgent.css\" />
+    <div id=\"updateAgentPopup\" class=\"updateAgentPopup\">
+        <div class=\"updateAgentPopup-content\">
+        <p>Record updated successfully</p>
+      </div>
+    </div>";
+    echo "<script>setTimeout(\"location.href='agentReg.php';\",2500);</script>";
 } else {
     echo "Error updating record: " . $conn->error;
     mysqli_close($conn);
     header('Location: agentReg.php');
 }
-
+//  <span class="closeAgUpdate" id="closeAgUpdate" onclick="closeFunction()">&times;</span>
 ?>

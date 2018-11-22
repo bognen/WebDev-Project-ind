@@ -73,4 +73,32 @@ function selectAgencies(){
 
   mysqli_close($conn);
 }
+
+function insAgentViaClass($myString){
+    $server="localhost";
+    $user="root";
+    $password="";
+    $dbname="travelexperts";
+
+    $conn = mysqli_connect($server,$user,$password,$dbname);
+    // Check connection
+    if (mysqli_connect_errno())
+      {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    } else {
+      //echo "DB connection was successful</br>";
+    }
+    $sql = "INSERT INTO `agents`(`AgtFirstName`,`AgtMiddleInitial`,`AgtLastName`,`AgtBusPhone`,
+                        `AgtEmail`,`AgtPosition`,`AgencyId`,`AgtPsw`) VALUES ($myString)";
+
+   if ($conn->query($sql) === TRUE) {
+      echo "New record created successfully";
+      return TRUE;
+   } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+      return FALSE;
+    }
+
+   mysqli_close($conn);
+ }
 ?>
