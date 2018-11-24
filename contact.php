@@ -1,4 +1,7 @@
 <?php
+/****OOSD - Fall 2018. CPRG-210-OSD  Dima Bognen****/
+/*** Document is responsible for displaying Contact Us page ***/
+
   session_cache_expire(30);
   session_start();
 ?>

@@ -1,3 +1,7 @@
+// ****    OOSD - Fall 2018. CPRG-210-OSD  Dima Bognen    ***//
+// ****    This file is called from index.php and register.php files and manages     ***//
+// ****    pop up windows on registration page and changing popular destanations on main page   ***//
+
   //*************************************//
   //** Span element (to close PopUp)   **//
   //*************************************//
