@@ -1,3 +1,7 @@
+<!--*** OOSD - Fall 2018. CPRG-210-OSD  Dima Bognen ***-->
+<!--*** File is responsible for displaying agent's info retreived from Database ***-->
+<!--*** After changes are done this file will call updateAgentAction.php ***-->
+
 <?php
   if (!isset($_REQUEST['agentUpdateText'])){
     echo "There is nothing in this file";

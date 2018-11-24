@@ -1,3 +1,6 @@
+// ****    OOSD - Fall 2018. CPRG-210-OSD  Dima Bognen    ***//
+// ****    This file is used to validate Agent update and agent add forms    ***//
+// ****    And manage popup windows *****//
 // *****************************************************************//
 /// *** Function is meant to validate data before inserting into MySQL ***///
 // *****************************************************************//

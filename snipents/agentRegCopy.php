@@ -1,4 +1,6 @@
 <?php echo
+// ****    OOSD - Fall 2018. CPRG-210-OSD  Dima Bognen    ***//
+// ****    This file is called from insertagent.php and used as a background     ***//
 "<div id=\"addAgent\">
   <h4 id=\"addAgentHeader\">Enter New Agent's Info</h4>
   <form id=\"addAgentForm\" name=\"addAgentForm\" method=\"POST\" action=\"test.php\">

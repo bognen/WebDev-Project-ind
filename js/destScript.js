@@ -1,3 +1,7 @@
+// ****    OOSD - Fall 2018. CPRG-210-OSD  Dima Bognen    ***//
+// ****    This file is called from destanation.php file and manages     ***//
+// **** pretty much all content: places' descriptions, images and outside links ***//
+// ****    as well as moving plane image     ***//
 // Declare arrays and variables
 var decription = new Array("Cancun, Mexico",
                            "Punta-Cana, Dominican Republic",

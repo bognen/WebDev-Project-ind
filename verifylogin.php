@@ -1,3 +1,7 @@
+<!--*** OOSD - Fall 2018. CPRG-210-OSD  Dima Bognen ***-->
+<!--*** File is called from login.php, receives entered info and compares it with ***-->
+<!--*** info stored in DB. ***-->
+
 <?php
   session_cache_expire(30);
   session_start();

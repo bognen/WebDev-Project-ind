@@ -1,3 +1,5 @@
+<!--*** OOSD - Fall 2018. CPRG-210-OSD  Dima Bognen ***-->
+<!--*** File is responsible for displaying login page and passing on session info ***-->
 <?php
   session_cache_expire(30);
   session_start();

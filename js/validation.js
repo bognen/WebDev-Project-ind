@@ -1,3 +1,6 @@
+// ****    OOSD - Fall 2018. CPRG-210-OSD  Dima Bognen    ***//
+// ****    This file is called from register.php and usedto validate data entered by user    ***//
+
 //***************************************************************************//
 //** Variables which will be used in functions below**//
 //***************************************************************************//

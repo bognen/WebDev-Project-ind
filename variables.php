@@ -1,3 +1,6 @@
+<!--*** OOSD - Fall 2018. CPRG-210-OSD  Dima Bognen ***-->
+<!--*** File was used in tests ***-->
+
 <?php
     $travelSites = array('Expedia' => 'https://www.expedia.ca/',
                          'Travelocity' => 'https://www.travelocity.ca/',

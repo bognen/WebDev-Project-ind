@@ -1,3 +1,8 @@
+<!--*** OOSD - Fall 2018. CPRG-210-OSD  Dima Bognen ***-->
+<!--*** File is responsible for displaying registration form ***-->
+<!--*** it also manages several popup windows and calls bouncer.php ***-->
+<!--*** Form validation is conducted via validation.js ***-->
+
 <?php
   session_cache_expire(30);
   session_start();

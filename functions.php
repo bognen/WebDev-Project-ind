@@ -1,4 +1,7 @@
 <?php
+/****OOSD - Fall 2018. CPRG-210-OSD  Dima Bognen****/
+/*** Document stores three functions: insert array into DataBase, select agennts from database ***/
+/*** and insert class object into database ***/
 
 function insArray($myArray){
     $server="localhost";

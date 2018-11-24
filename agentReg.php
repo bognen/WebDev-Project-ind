@@ -1,4 +1,8 @@
 <?php
+/****OOSD - Fall 2018. CPRG-210-OSD  Dima Bognen****/
+/*** Document is responsible for displaying agent registration form and related popups ***/
+/*** as action calls euther insertAgent.php or insertViaClass.php ***/
+
     session_cache_expire(30);
     session_start();
 

@@ -1,3 +1,6 @@
+<!--*** OOSD - Fall 2018. CPRG-210-OSD  Dima Bognen ***-->
+<!--*** File is called from updateAgentReg.php, receives updated agent's data and inserts it into database ***-->
+
 <?php
   if (!isset($_REQUEST['AgentId'])){
     echo "There is nothing in this file";

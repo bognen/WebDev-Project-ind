@@ -1,3 +1,6 @@
+// ****    OOSD - Fall 2018. CPRG-210-OSD  Dima Bognen    ***//
+// ****    This file is called from register.php and manages pop up hing which is being //
+// ****    shown while user is filling the form ****//
 //***************************************************************************//
 //** Function which shows registration form hint in certain spot**//
 //***************************************************************************//
